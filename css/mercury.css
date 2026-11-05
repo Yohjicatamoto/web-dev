@@ -1,0 +1,25 @@
+/* ============================================================
+   mercury.css — Mercury theme: flat rock gray, odd mono title
+   ============================================================ */
+
+body.mercury {
+  --accent: #8a8a8a;
+  --on-accent: #111111;
+  --heading-font: "Major Mono Display", "Courier New", monospace;
+}
+
+/* Night side: the whole page flips dark (class added by mercury.js) */
+body.mercury.night {
+  --paper: #111111;
+  --ink: #f2f0eb;
+  --accent: #2b2b2b;
+  --on-accent: #f2f0eb;
+}
+
+.temp-readout {
+  max-width: 520px;
+}
+
+.temp-readout strong {
+  font-size: clamp(3rem, 14vw, 6rem);
+}

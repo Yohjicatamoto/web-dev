@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Earth &mdash; The Solar System</title>
+  <meta name="description" content="Facts about Earth, the only planet known to have life.">
+
+  <!-- Fonts: IBM Plex Mono for all text, Bricolage Grotesque for the page title -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Bricolage+Grotesque:wght@800&display=swap">
+
+  <!-- Shared styles first, then this page's theme -->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/earth.css">
+</head>
+<body class="earth">
+  <div class="page">
+
+    <!-- ===== Header + navigation (the same on every page) ===== -->
+    <header class="site-header">
+      <div class="site-top">
+        <a href="index.html">The Solar System</a>
+        <span>Sakchhyam Kc</span>
+      </div>
+      <nav class="site-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html"><span>00</span>Home</a></li>
+          <li><a href="sun.html"><span>01</span>Sun</a></li>
+          <li><a href="mercury.html"><span>02</span>Mercury</a></li>
+          <li><a href="venus.html"><span>03</span>Venus</a></li>
+          <li><a href="earth.html" class="active" aria-current="page"><span>04</span>Earth</a></li>
+          <li><a href="moon.html"><span>05</span>Moon</a></li>
+          <li><a href="mars.html"><span>06</span>Mars</a></li>
+          <li><a href="jupiter.html"><span>07</span>Jupiter</a></li>
+          <li><a href="saturn.html"><span>08</span>Saturn</a></li>
+          <li><a href="uranus.html"><span>09</span>Uranus</a></li>
+          <li><a href="neptune.html"><span>10</span>Neptune</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <!-- ===== Title ===== -->
+      <section class="title-block">
+        <p class="index-no">04 / 10 &mdash; Planet 3</p>
+        <h1>Earth</h1>
+        <p class="kicker">Home. Still the only place we know of with life.</p>
+      </section>
+
+      <!-- ===== Intro + facts (left) and images (right) ===== -->
+      <div class="grid">
+        <section class="col">
+          <h2 class="label">01 &mdash; Intro</h2>
+          <div class="intro">
+            <p>Earth is the third planet from the Sun and the biggest of the four rocky ones. It's the only planet we know of with liquid water sitting on the surface, and the only one with life, at least so far.</p>
+            <p>It's at just the right distance from the Sun, not too hot and not too cold, which is why it gets called the &ldquo;Goldilocks&rdquo; planet. The atmosphere and magnetic field also do a lot of quiet work in the background, blocking radiation and burning up space rocks before they hit us.</p>
+          </div>
+
+          <h2 class="label">02 &mdash; Quick facts</h2>
+          <table class="facts">
+            <tr><th scope="row">Distance from the Sun</th><td>About 150 million km (1 AU)</td></tr>
+            <tr><th scope="row">Diameter</th><td>12,742 km</td></tr>
+            <tr><th scope="row">Length of a day</th><td>About 24 hours</td></tr>
+            <tr><th scope="row">Length of a year</th><td>365.25 days</td></tr>
+            <tr><th scope="row">Covered by water</th><td>About 71%</td></tr>
+            <tr><th scope="row">Average temperature</th><td>About 15 &deg;C</td></tr>
+            <tr><th scope="row">Moons</th><td>1</td></tr>
+          </table>
+        </section>
+
+        <section class="col">
+          <h2 class="label">03 &mdash; Images</h2>
+          <figure tabindex="0">
+            <img src="images/earth/blue-marble.jpg" alt="Earth from space, showing blue oceans, swirling white clouds and the continent of Africa" width="1200" height="900">
+            <figcaption>Fig. 1 &mdash; Blue Marble, Apollo 17, 1972</figcaption>
+          </figure>
+          <figure tabindex="0">
+            <img src="images/earth/earthrise.jpg" alt="Earth rising over the gray horizon of the Moon" width="1200" height="900">
+            <figcaption>Fig. 2 &mdash; Earthrise, Apollo 8, 1968</figcaption>
+          </figure>
+        </section>
+      </div>
+
+      <!-- ===== Interactive feature (code in js/earth.js) ===== -->
+      <section class="feature">
+        <h2 class="label">04 &mdash; Quick quiz</h2>
+        <p class="feature-note">Five questions. Everything you need is somewhere on this page.</p>
+
+        <div class="quiz">
+          <p class="quiz-progress" id="quiz-progress">Question 1 / 5</p>
+          <p class="quiz-question" id="quiz-question"></p>
+          <!-- Answer buttons are added here by earth.js -->
+          <div class="quiz-answers" id="quiz-answers"></div>
+          <p class="quiz-feedback" id="quiz-feedback" aria-live="polite"></p>
+          <button class="btn btn-accent" id="quiz-next" type="button" hidden>Next question</button>
+        </div>
+      </section>
+    </main>
+
+    <!-- ===== Previous / next page ===== -->
+    <nav class="pager" aria-label="Previous and next page">
+      <a href="venus.html">&larr; 03 Venus</a>
+      <a href="moon.html">05 Moon &rarr;</a>
+    </nav>
+
+    <footer class="site-footer">
+      <span>Sakchhyam Kc &mdash; Web Dev, 2026</span>
+      <span>Images: NASA unless noted</span>
+      <span>HTML + CSS + JavaScript only</span>
+    </footer>
+  </div>
+
+  <script src="js/earth.js"></script>
+</body>
+</html>

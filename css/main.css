@@ -1,0 +1,392 @@
+/* ============================================================
+   main.css
+   Shared styles for every page of the site.
+
+   Each page also loads its own theme file (e.g. css/mars.css).
+   A theme file mostly just changes these variables:
+     --accent        the planet's color
+     --on-accent     text color used on top of the accent
+     --heading-font  the planet's title font
+   ============================================================ */
+
+/* ---------- 1. Variables ---------- */
+:root {
+  --paper: #f2f0eb;      /* page background */
+  --ink: #111111;        /* text and lines */
+  --accent: #111111;     /* replaced by each page */
+  --on-accent: #f2f0eb;
+  --heading-font: "IBM Plex Mono", "Courier New", monospace;
+  --mono: "IBM Plex Mono", "Courier New", monospace;
+}
+
+/* Line styles are set on <body> (not :root) so they pick up the
+   page's own --ink color, e.g. white lines on the dark homepage */
+body {
+  --rule: 3px solid var(--ink);   /* thick line */
+  --thin: 1px solid var(--ink);   /* thin line */
+}
+
+/* ---------- 2. Reset ---------- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--mono);
+  font-size: 16px;
+  line-height: 1.55;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+}
+
+/* Keyboard users can always see where they are */
+:focus-visible {
+  outline: 3px solid var(--ink);
+  outline-offset: 2px;
+}
+
+/* Everything sits inside one bordered column */
+.page {
+  max-width: 1100px;
+  margin: 0 auto;
+  border-left: var(--rule);
+  border-right: var(--rule);
+  min-height: 100vh;
+}
+
+/* ---------- 3. Header + navigation ---------- */
+.site-header {
+  border-bottom: var(--rule);
+}
+
+.site-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 8px 16px;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: var(--thin);
+}
+
+.site-top a {
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.site-nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.site-nav a {
+  display: block;
+  padding: 10px 14px;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-right: var(--thin);
+  border-bottom: var(--thin);
+  margin-bottom: -1px;   /* stops double lines when the nav wraps */
+}
+
+.site-nav a span {
+  opacity: 0.6;
+  margin-right: 4px;
+}
+
+/* Hover and the current page are both shown by inverting colors */
+.site-nav a:hover,
+.site-nav a.active {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.site-nav a.active span {
+  opacity: 1;
+}
+
+/* ---------- 4. Title block ---------- */
+.title-block {
+  background: var(--accent);
+  color: var(--on-accent);
+  padding: 32px 16px 24px;
+  border-bottom: var(--rule);
+}
+
+.index-no {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+h1 {
+  font-family: var(--heading-font);
+  font-size: clamp(3.2rem, 13vw, 9rem);
+  line-height: 0.95;
+  text-transform: uppercase;
+  margin: 12px 0;
+  overflow-wrap: anywhere;
+}
+
+.kicker {
+  font-size: 1rem;
+  max-width: 40ch;
+}
+
+/* ---------- 5. Main two-column grid ---------- */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  border-bottom: var(--rule);
+}
+
+.col {
+  padding: 24px 16px;
+  min-width: 0;
+}
+
+/* On wider screens: text on the left, images on the right */
+@media (min-width: 800px) {
+  .grid {
+    grid-template-columns: 1.15fr 1fr;
+  }
+
+  .grid .col + .col {
+    border-left: var(--rule);
+  }
+}
+
+/* Small numbered section labels, e.g. "01 — Intro" */
+.label {
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding-bottom: 6px;
+  margin-bottom: 16px;
+  border-bottom: var(--thin);
+}
+
+.intro p {
+  margin-bottom: 14px;
+  max-width: 60ch;
+}
+
+.intro + .label {
+  margin-top: 32px;
+}
+
+/* ---------- 6. Facts table ---------- */
+.facts {
+  width: 100%;
+  border-collapse: collapse;
+  border-top: var(--rule);
+  border-bottom: var(--rule);
+}
+
+.facts th,
+.facts td {
+  text-align: left;
+  vertical-align: top;
+  padding: 10px 0;
+  border-bottom: var(--thin);
+}
+
+.facts th {
+  width: 38%;
+  padding-right: 12px;
+  font-size: 0.75rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.facts td {
+  font-weight: 600;
+}
+
+.facts tr:last-child th,
+.facts tr:last-child td {
+  border-bottom: none;
+}
+
+/* ---------- 7. Images ---------- */
+figure {
+  margin-bottom: 24px;
+}
+
+figure:last-child {
+  margin-bottom: 0;
+}
+
+/* Photos are black and white until you hover (or tap on a phone) */
+figure img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border: var(--rule);
+  filter: grayscale(1);
+}
+
+figure:hover img,
+figure:focus img,
+figure:focus-within img {
+  filter: none;
+}
+
+figcaption {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding-top: 6px;
+}
+
+/* ---------- 8. Interactive feature section ---------- */
+.feature {
+  padding: 24px 16px 32px;
+  border-bottom: var(--rule);
+}
+
+.feature-note {
+  max-width: 60ch;
+  margin-bottom: 20px;
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  margin: 16px 0;
+}
+
+/* Square, flat buttons. They invert on hover, no animation. */
+.btn {
+  font-family: var(--mono);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background: var(--paper);
+  color: var(--ink);
+  border: var(--rule);
+  border-radius: 0;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.btn-accent {
+  background: var(--accent);
+  color: var(--on-accent);
+}
+
+.btn:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+/* Number inputs and dropdowns */
+.field {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.field label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+input[type="number"],
+select {
+  font-family: var(--mono);
+  font-size: 1rem;
+  background: #ffffff;
+  color: #111111;
+  border: var(--rule);
+  border-radius: 0;
+  padding: 7px 10px;
+}
+
+input[type="number"] {
+  width: 10ch;
+}
+
+/* Big readout used by the calculators */
+.readout {
+  border: var(--rule);
+  padding: 16px;
+  margin-top: 16px;
+  min-height: 4.5em;
+}
+
+.readout strong {
+  display: block;
+  font-family: var(--heading-font);
+  font-size: clamp(2rem, 7vw, 3.5rem);
+  line-height: 1.1;
+}
+
+.error {
+  font-weight: 600;
+}
+
+/* ---------- 9. Previous / next page links ---------- */
+.pager {
+  display: flex;
+  border-bottom: var(--rule);
+}
+
+.pager a {
+  flex: 1;
+  padding: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.pager a + a {
+  text-align: right;
+  border-left: var(--rule);
+}
+
+.pager a:hover {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+/* ---------- 10. Footer ---------- */
+.site-footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px 24px;
+  padding: 16px;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}

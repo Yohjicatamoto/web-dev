@@ -1,0 +1,42 @@
+/* ============================================================
+   uranus.css — Uranus theme: ice cyan, wide rounded title.
+   The title is turned on its side, like the planet.
+   ============================================================ */
+
+body.uranus {
+  --accent: #3fb8c4;
+  --on-accent: #111111;
+  --heading-font: "Unbounded", Arial, sans-serif;
+}
+
+.uranus h1 {
+  font-size: clamp(2.6rem, 10vw, 6.5rem);
+}
+
+/* A tilted "axis" line, 98 degrees, in the corner of the title block */
+.uranus .title-block {
+  position: relative;
+  overflow: hidden;
+}
+
+.axis {
+  position: absolute;
+  right: 40px;
+  top: 50%;
+  width: 160px;
+  height: 3px;
+  background: #111111;
+  transform: rotate(98deg);
+}
+
+.axis-label {
+  position: absolute;
+  right: 16px;
+  bottom: 12px;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+}
+
+.calc {
+  max-width: 520px;
+}

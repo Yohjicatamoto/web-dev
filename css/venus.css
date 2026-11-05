@@ -1,0 +1,43 @@
+/* ============================================================
+   venus.css — Venus theme: sulfur yellow, soft serif title
+   ============================================================ */
+
+body.venus {
+  --accent: #e3b94f;
+  --on-accent: #111111;
+  --heading-font: "Instrument Serif", Georgia, serif;
+}
+
+.venus h1 {
+  text-transform: none;
+  font-weight: 400;
+}
+
+/* ---------- Read more sections ---------- */
+.more-list {
+  border-top: var(--rule);
+  max-width: 720px;
+}
+
+.more-item {
+  border-bottom: var(--thin);
+  padding: 16px 0;
+}
+
+.more-item h3 {
+  font-family: var(--heading-font);
+  font-weight: 400;
+  font-size: 1.8rem;
+  line-height: 1.1;
+  margin-bottom: 8px;
+}
+
+.more-item p {
+  margin-bottom: 10px;
+}
+
+.more-panel {
+  border-left: var(--rule);
+  padding: 8px 0 0 16px;
+  margin-top: 12px;
+}

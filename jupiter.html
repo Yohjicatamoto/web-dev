@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jupiter &mdash; The Solar System</title>
+  <meta name="description" content="Facts about Jupiter, the largest planet in the solar system.">
+
+  <!-- Fonts: IBM Plex Mono for all text, Big Shoulders Display for the page title -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Big+Shoulders+Display:wght@900&display=swap">
+
+  <!-- Shared styles first, then this page's theme -->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/jupiter.css">
+</head>
+<body class="jupiter">
+  <div class="page">
+
+    <!-- ===== Header + navigation (the same on every page) ===== -->
+    <header class="site-header">
+      <div class="site-top">
+        <a href="index.html">The Solar System</a>
+        <span>Sakchhyam Kc</span>
+      </div>
+      <nav class="site-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html"><span>00</span>Home</a></li>
+          <li><a href="sun.html"><span>01</span>Sun</a></li>
+          <li><a href="mercury.html"><span>02</span>Mercury</a></li>
+          <li><a href="venus.html"><span>03</span>Venus</a></li>
+          <li><a href="earth.html"><span>04</span>Earth</a></li>
+          <li><a href="moon.html"><span>05</span>Moon</a></li>
+          <li><a href="mars.html"><span>06</span>Mars</a></li>
+          <li><a href="jupiter.html" class="active" aria-current="page"><span>07</span>Jupiter</a></li>
+          <li><a href="saturn.html"><span>08</span>Saturn</a></li>
+          <li><a href="uranus.html"><span>09</span>Uranus</a></li>
+          <li><a href="neptune.html"><span>10</span>Neptune</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <!-- ===== Title ===== -->
+      <section class="title-block">
+        <p class="index-no">07 / 10 &mdash; Planet 5</p>
+        <h1>Jupiter</h1>
+        <p class="kicker">The biggest planet by far. Mostly gas, mostly storms.</p>
+      </section>
+      <div class="bands" aria-hidden="true"></div>
+
+      <!-- ===== Intro + facts (left) and images (right) ===== -->
+      <div class="grid">
+        <section class="col">
+          <h2 class="label">01 &mdash; Intro</h2>
+          <div class="intro">
+            <p>Jupiter is huge: it's more than twice as massive as all the other planets combined. It's a gas giant, so there's no solid ground to stand on, just layers of hydrogen and helium that get thicker and hotter the deeper you go.</p>
+            <p>The stripes are bands of clouds dragged around by crazy fast winds, and the Great Red Spot is a storm wider than Earth that's been going for hundreds of years. Jupiter also spins faster than any other planet, so a full day there only lasts about 10 hours.</p>
+          </div>
+
+          <h2 class="label">02 &mdash; Quick facts</h2>
+          <table class="facts">
+            <tr><th scope="row">Distance from the Sun</th><td>About 778 million km (5.2 AU)</td></tr>
+            <tr><th scope="row">Diameter</th><td>139,820 km (about 11&times; Earth)</td></tr>
+            <tr><th scope="row">Length of a day</th><td>About 10 hours</td></tr>
+            <tr><th scope="row">Length of a year</th><td>About 12 Earth years</td></tr>
+            <tr><th scope="row">Type</th><td>Gas giant</td></tr>
+            <tr><th scope="row">Moons</th><td>95+ known, including Io, Europa, Ganymede and Callisto</td></tr>
+            <tr><th scope="row">Great Red Spot</th><td>A storm wider than Earth</td></tr>
+          </table>
+        </section>
+
+        <section class="col">
+          <h2 class="label">03 &mdash; Images</h2>
+          <figure tabindex="0">
+            <img src="images/jupiter/juno-jupiter.jpg" alt="Jupiter's orange, brown and white cloud bands, with the Great Red Spot in the lower half" width="1200" height="900">
+            <figcaption>Fig. 1 &mdash; Jupiter's cloud bands, Juno spacecraft</figcaption>
+          </figure>
+          <figure tabindex="0">
+            <img src="images/jupiter/great-red-spot.jpg" alt="Close-up of the Great Red Spot, a giant reddish oval storm surrounded by swirling clouds" width="1200" height="900">
+            <figcaption>Fig. 2 &mdash; The Great Red Spot up close</figcaption>
+          </figure>
+        </section>
+      </div>
+
+      <!-- ===== Interactive feature (code in js/jupiter.js) ===== -->
+      <section class="feature">
+        <h2 class="label">04 &mdash; Spin model</h2>
+        <p class="feature-note">A simple model of Jupiter turning. A real Jupiter day is 9 hours 56 minutes. Here it's a few seconds.</p>
+
+        <div class="spin-layout">
+          <!-- jupiter.js slides the striped strip sideways -->
+          <div class="planet" role="img" aria-label="Model of Jupiter with stripes and the Great Red Spot">
+            <div class="strip" id="jupiter-strip">
+              <span class="spot spot-1"></span>
+              <span class="spot spot-2"></span>
+            </div>
+          </div>
+
+          <div>
+            <p class="spin-speed" id="spin-speed" aria-live="polite">Speed: 1&times;</p>
+            <div class="controls">
+              <button class="btn btn-accent" id="spin-start" type="button">Start</button>
+              <button class="btn" id="spin-stop" type="button">Stop</button>
+            </div>
+            <div class="controls">
+              <button class="btn" id="spin-slower" type="button">Slower</button>
+              <button class="btn" id="spin-faster" type="button">Faster</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ===== Previous / next page ===== -->
+    <nav class="pager" aria-label="Previous and next page">
+      <a href="mars.html">&larr; 06 Mars</a>
+      <a href="saturn.html">08 Saturn &rarr;</a>
+    </nav>
+
+    <footer class="site-footer">
+      <span>Sakchhyam Kc &mdash; Web Dev, 2026</span>
+      <span>Images: NASA unless noted</span>
+      <span>HTML + CSS + JavaScript only</span>
+    </footer>
+  </div>
+
+  <script src="js/jupiter.js"></script>
+</body>
+</html>

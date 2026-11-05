@@ -1,0 +1,66 @@
+/* ============================================================
+   earth.css — Earth theme: ocean blue, chunky grotesque title
+   ============================================================ */
+
+body.earth {
+  --accent: #1f5fbf;
+  --on-accent: #f2f0eb;
+  --heading-font: "Bricolage Grotesque", "Arial Black", sans-serif;
+}
+
+/* ---------- Quiz ---------- */
+.quiz {
+  border: var(--rule);
+  padding: 16px;
+  max-width: 640px;
+}
+
+.quiz-progress {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+}
+
+.quiz-question {
+  font-family: var(--heading-font);
+  font-size: 1.6rem;
+  line-height: 1.15;
+  margin: 8px 0 16px;
+}
+
+.quiz-answers {
+  display: grid;
+  gap: 8px;
+}
+
+@media (min-width: 560px) {
+  .quiz-answers {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.answer {
+  text-align: left;
+  text-transform: none;
+}
+
+/* Right answer turns blue, wrong pick turns black */
+.answer.is-correct,
+.answer.is-correct:disabled {
+  background: var(--accent);
+  color: var(--on-accent);
+  opacity: 1;
+}
+
+.answer.is-wrong,
+.answer.is-wrong:disabled {
+  background: var(--ink);
+  color: var(--paper);
+  opacity: 1;
+  text-decoration: line-through;
+}
+
+.quiz-feedback {
+  font-weight: 600;
+  margin: 16px 0 8px;
+  min-height: 1.5em;
+}

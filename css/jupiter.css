@@ -1,0 +1,83 @@
+/* ============================================================
+   jupiter.css — Jupiter theme: banded tan, extra-bold title
+   ============================================================ */
+
+body.jupiter {
+  --accent: #c97b3d;
+  --on-accent: #111111;
+  --heading-font: "Big Shoulders Display", Impact, sans-serif;
+}
+
+/* Thin stripes along the bottom of the title, like Jupiter's bands */
+.jupiter .title-block {
+  border-bottom: none;
+}
+
+.bands {
+  height: 24px;
+  border-bottom: var(--rule);
+  background:
+    linear-gradient(#8a4b22 0 25%, #e8d2b0 25% 50%, #a65e2e 50% 75%, #f2f0eb 75% 100%);
+}
+
+/* ---------- Spinning planet ---------- */
+.spin-layout {
+  display: grid;
+  gap: 24px;
+  align-items: center;
+}
+
+@media (min-width: 640px) {
+  .spin-layout {
+    grid-template-columns: 300px 1fr;
+  }
+}
+
+.planet {
+  width: 100%;
+  max-width: 300px;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  border: var(--rule);
+  overflow: hidden;
+  position: relative;
+}
+
+/* The strip is twice as wide as the planet. It's moved by jupiter.js. */
+.strip {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 200%;
+  height: 100%;
+  /* Hard-edged bands (no blending between colors) */
+  background: linear-gradient(
+    #e8d2b0 0 12%, #a65e2e 12% 20%, #f2e6d0 20% 30%, #8a4b22 30% 40%,
+    #e8d2b0 40% 52%, #c97b3d 52% 62%, #f2e6d0 62% 72%, #a65e2e 72% 80%,
+    #e8d2b0 80% 90%, #8a4b22 90% 100%
+  );
+}
+
+/* The Great Red Spot, drawn twice so the loop is seamless */
+.spot {
+  position: absolute;
+  top: 58%;
+  width: 18%;
+  height: 10%;
+  background: #b3401e;
+  border: 2px solid #111111;
+  border-radius: 50%;
+}
+
+.spot-1 {
+  left: 15%;
+}
+
+.spot-2 {
+  left: 65%;
+}
+
+.spin-speed {
+  font-weight: 600;
+  text-transform: uppercase;
+}

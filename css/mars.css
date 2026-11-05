@@ -1,0 +1,18 @@
+/* ============================================================
+   mars.css — Mars theme: rust red, tall condensed title
+   ============================================================ */
+
+body.mars {
+  --accent: #b3401e;
+  --on-accent: #f2f0eb;
+  --heading-font: "Anton", Impact, sans-serif;
+}
+
+.mars h1 {
+  font-weight: 400;
+  letter-spacing: 0.01em;
+}
+
+.calc {
+  max-width: 520px;
+}
