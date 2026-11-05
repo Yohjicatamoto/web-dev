@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Venus &mdash; The Solar System</title>
+  <meta name="description" content="Facts about Venus, the hottest planet in the solar system.">
+
+  <!-- Fonts: IBM Plex Mono for all text, Instrument Serif for the page title -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Instrument+Serif&display=swap">
+
+  <!-- Shared styles first, then this page's theme -->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/venus.css">
+</head>
+<body class="venus">
+  <div class="page">
+
+    <!-- ===== Header + navigation (the same on every page) ===== -->
+    <header class="site-header">
+      <div class="site-top">
+        <a href="index.html">The Solar System</a>
+        <span>Sakchhyam Kc</span>
+      </div>
+      <nav class="site-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html"><span>00</span>Home</a></li>
+          <li><a href="sun.html"><span>01</span>Sun</a></li>
+          <li><a href="mercury.html"><span>02</span>Mercury</a></li>
+          <li><a href="venus.html" class="active" aria-current="page"><span>03</span>Venus</a></li>
+          <li><a href="earth.html"><span>04</span>Earth</a></li>
+          <li><a href="moon.html"><span>05</span>Moon</a></li>
+          <li><a href="mars.html"><span>06</span>Mars</a></li>
+          <li><a href="jupiter.html"><span>07</span>Jupiter</a></li>
+          <li><a href="saturn.html"><span>08</span>Saturn</a></li>
+          <li><a href="uranus.html"><span>09</span>Uranus</a></li>
+          <li><a href="neptune.html"><span>10</span>Neptune</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <!-- ===== Title ===== -->
+      <section class="title-block">
+        <p class="index-no">03 / 10 &mdash; Planet 2</p>
+        <h1>Venus</h1>
+        <p class="kicker">Earth's &ldquo;twin&rdquo; that went very, very wrong.</p>
+      </section>
+
+      <!-- ===== Intro + facts (left) and images (right) ===== -->
+      <div class="grid">
+        <section class="col">
+          <h2 class="label">01 &mdash; Intro</h2>
+          <div class="intro">
+            <p>Venus is almost the same size as Earth, which is why people call them twins. That's pretty much where the similarities stop. It's wrapped in thick clouds of sulfuric acid, and the air is mostly carbon dioxide.</p>
+            <p>All that CO&#8322; traps heat, so the surface sits at around 465 &deg;C, which makes it the hottest planet even though Mercury is closer to the Sun. After the Moon, it's the brightest thing in the night sky, so you've probably seen it without realizing.</p>
+          </div>
+
+          <h2 class="label">02 &mdash; Quick facts</h2>
+          <table class="facts">
+            <tr><th scope="row">Distance from the Sun</th><td>About 108 million km (0.7 AU)</td></tr>
+            <tr><th scope="row">Diameter</th><td>12,104 km (95% of Earth)</td></tr>
+            <tr><th scope="row">Surface temperature</th><td>About 465 &deg;C</td></tr>
+            <tr><th scope="row">Length of a year</th><td>225 Earth days</td></tr>
+            <tr><th scope="row">One full spin</th><td>243 Earth days</td></tr>
+            <tr><th scope="row">Spin direction</th><td>Backwards compared to most planets</td></tr>
+            <tr><th scope="row">Moons</th><td>0</td></tr>
+          </table>
+        </section>
+
+        <section class="col">
+          <h2 class="label">03 &mdash; Images</h2>
+          <figure tabindex="0">
+            <img src="images/venus/venus-clouds.jpg" alt="Venus covered in smooth pale yellow clouds" width="1200" height="900">
+            <figcaption>Fig. 1 &mdash; Venus's cloud cover, Mariner 10</figcaption>
+          </figure>
+          <figure tabindex="0">
+            <img src="images/venus/radar-surface.jpg" alt="Radar map of Venus's surface showing volcanoes and lava plains" width="1200" height="900">
+            <figcaption>Fig. 2 &mdash; The surface under the clouds, mapped by radar from Magellan</figcaption>
+          </figure>
+        </section>
+      </div>
+
+      <!-- ===== Interactive feature (code in js/venus.js) ===== -->
+      <section class="feature">
+        <h2 class="label">04 &mdash; Read more</h2>
+        <div class="more-list">
+          <article class="more-item">
+            <h3>Why is Venus so hot?</h3>
+            <p>Short version: a runaway greenhouse effect.</p>
+            <button class="btn read-more" type="button" aria-expanded="false" aria-controls="more-1">+ Read more</button>
+            <div class="more-panel" id="more-1" hidden>
+              <p>Sunlight gets through the clouds and heats the ground. The ground tries to give that heat back off as infrared, but the super thick carbon dioxide air traps it. The heat keeps piling up with nowhere to go.</p>
+              <p>The result is around 465 &deg;C everywhere, day or night, poles or equator. That's hotter than a pizza oven.</p>
+            </div>
+          </article>
+
+          <article class="more-item">
+            <h3>A day longer than a year</h3>
+            <p>Venus spins really slowly, and backwards.</p>
+            <button class="btn read-more" type="button" aria-expanded="false" aria-controls="more-2">+ Read more</button>
+            <div class="more-panel" id="more-2" hidden>
+              <p>It takes Venus 243 Earth days to spin around once, but only 225 Earth days to orbit the Sun. So one spin takes longer than a whole year.</p>
+              <p>It also spins the opposite way from Earth, which means on Venus the Sun would rise in the west and set in the east.</p>
+            </div>
+          </article>
+
+          <article class="more-item">
+            <h3>Has anything landed there?</h3>
+            <p>Yes, but nothing lasted long.</p>
+            <button class="btn read-more" type="button" aria-expanded="false" aria-controls="more-3">+ Read more</button>
+            <div class="more-panel" id="more-3" hidden>
+              <p>The Soviet Union landed several Venera probes in the 1970s and 80s. The air pressure on the surface is about 90 times Earth's, like being almost a kilometer deep in the ocean.</p>
+              <p>The record holder, Venera 13, survived about 2 hours and sent back the first color photos of the surface before the heat and pressure killed it.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <!-- ===== Previous / next page ===== -->
+    <nav class="pager" aria-label="Previous and next page">
+      <a href="mercury.html">&larr; 02 Mercury</a>
+      <a href="earth.html">04 Earth &rarr;</a>
+    </nav>
+
+    <footer class="site-footer">
+      <span>Sakchhyam Kc &mdash; Web Dev, 2026</span>
+      <span>Images: NASA unless noted</span>
+      <span>HTML + CSS + JavaScript only</span>
+    </footer>
+  </div>
+
+  <script src="js/venus.js"></script>
+</body>
+</html>

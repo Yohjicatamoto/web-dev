@@ -1,0 +1,55 @@
+/* ============================================================
+   neptune.css — Neptune theme (bonus page): deep blue,
+   wide stretched title
+   ============================================================ */
+
+body.neptune {
+  --accent: #2b4bc9;
+  --on-accent: #f2f0eb;
+  --heading-font: "Syne", Arial, sans-serif;
+}
+
+.neptune h1 {
+  font-weight: 800;
+}
+
+/* ---------- Wind speed bars ---------- */
+.bars {
+  max-width: 720px;
+  margin-top: 16px;
+  border-top: var(--rule);
+}
+
+.bar-row {
+  padding: 12px 0;
+  border-bottom: var(--thin);
+}
+
+.bar-label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.bar-track {
+  border: var(--thin);
+  height: 28px;
+}
+
+.bar {
+  height: 100%;
+  background: var(--ink);
+}
+
+.bar.neptune-bar {
+  width: 100%;
+  background: var(--accent);
+}
+
+.wind-summary {
+  font-family: var(--heading-font);
+  font-weight: 800;
+  font-size: 1.6rem;
+  line-height: 1.15;
+  margin-top: 16px;
+}

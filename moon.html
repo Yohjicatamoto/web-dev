@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Moon &mdash; The Solar System</title>
+  <meta name="description" content="Facts about the Moon, Earth's only natural satellite.">
+
+  <!-- Fonts: IBM Plex Mono for all text, Space Grotesk for the page title -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Space+Grotesk:wght@300&display=swap">
+
+  <!-- Shared styles first, then this page's theme -->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/moon.css">
+</head>
+<body class="moon">
+  <div class="page">
+
+    <!-- ===== Header + navigation (the same on every page) ===== -->
+    <header class="site-header">
+      <div class="site-top">
+        <a href="index.html">The Solar System</a>
+        <span>Sakchhyam Kc</span>
+      </div>
+      <nav class="site-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html"><span>00</span>Home</a></li>
+          <li><a href="sun.html"><span>01</span>Sun</a></li>
+          <li><a href="mercury.html"><span>02</span>Mercury</a></li>
+          <li><a href="venus.html"><span>03</span>Venus</a></li>
+          <li><a href="earth.html"><span>04</span>Earth</a></li>
+          <li><a href="moon.html" class="active" aria-current="page"><span>05</span>Moon</a></li>
+          <li><a href="mars.html"><span>06</span>Mars</a></li>
+          <li><a href="jupiter.html"><span>07</span>Jupiter</a></li>
+          <li><a href="saturn.html"><span>08</span>Saturn</a></li>
+          <li><a href="uranus.html"><span>09</span>Uranus</a></li>
+          <li><a href="neptune.html"><span>10</span>Neptune</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <!-- ===== Title ===== -->
+      <section class="title-block">
+        <p class="index-no">05 / 10 &mdash; Earth's moon</p>
+        <h1>The Moon</h1>
+        <p class="kicker">Earth's only natural satellite, and the only other world people have walked on.</p>
+      </section>
+
+      <!-- ===== Intro + facts (left) and images (right) ===== -->
+      <div class="grid">
+        <section class="col">
+          <h2 class="label">01 &mdash; Intro</h2>
+          <div class="intro">
+            <p>The Moon is about a quarter as wide as Earth and sits roughly 384,000 km away. Most scientists think it formed when something about the size of Mars slammed into the young Earth and threw a ton of debris into orbit, which eventually clumped together.</p>
+            <p>The same side always faces us, so we only ever see one &ldquo;face.&rdquo; The phases happen because, as it orbits, we see different amounts of its sunlit half. Its gravity also pulls on the oceans, and that's what causes the tides.</p>
+          </div>
+
+          <h2 class="label">02 &mdash; Quick facts</h2>
+          <table class="facts">
+            <tr><th scope="row">Distance from Earth</th><td>About 384,400 km</td></tr>
+            <tr><th scope="row">Diameter</th><td>3,475 km (about &frac14; of Earth)</td></tr>
+            <tr><th scope="row">Gravity</th><td>About 1/6 of Earth's</td></tr>
+            <tr><th scope="row">Time to orbit Earth</th><td>About 27.3 days</td></tr>
+            <tr><th scope="row">Full cycle of phases</th><td>About 29.5 days</td></tr>
+            <tr><th scope="row">People who walked on it</th><td>12 (Apollo, 1969&ndash;1972)</td></tr>
+          </table>
+        </section>
+
+        <section class="col">
+          <h2 class="label">03 &mdash; Images</h2>
+          <figure tabindex="0">
+            <img src="images/moon/full-moon.jpg" alt="The full Moon, with dark gray patches and bright cratered areas" width="1200" height="900">
+            <figcaption>Fig. 1 &mdash; The near side, the face we always see</figcaption>
+          </figure>
+          <figure tabindex="0">
+            <img src="images/moon/apollo-bootprint.jpg" alt="An astronaut's boot print pressed into gray lunar dust" width="1200" height="900">
+            <figcaption>Fig. 2 &mdash; A bootprint from Apollo 11, 1969</figcaption>
+          </figure>
+        </section>
+      </div>
+
+      <!-- ===== Interactive feature (code in js/moon.js) ===== -->
+      <section class="feature">
+        <h2 class="label">04 &mdash; Phase viewer</h2>
+        <p class="feature-note">Step through the eight phases. The drawing is made with code, not a photo.</p>
+
+        <div class="phase-viewer">
+          <div class="phase-box">
+            <!-- moon.js changes the shape of the lit part -->
+            <svg viewBox="-110 -110 220 220" role="img" aria-labelledby="phase-name">
+              <circle class="moon-dark" r="100"></circle>
+              <path class="moon-lit" id="moon-lit" d=""></path>
+            </svg>
+          </div>
+
+          <div aria-live="polite">
+            <p class="phase-name" id="phase-name">New Moon</p>
+            <p class="phase-day" id="phase-day"></p>
+            <p id="phase-text"></p>
+            <div class="controls">
+              <button class="btn" id="phase-prev" type="button">&larr; Previous</button>
+              <button class="btn btn-accent" id="phase-next" type="button">Next &rarr;</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ===== Previous / next page ===== -->
+    <nav class="pager" aria-label="Previous and next page">
+      <a href="earth.html">&larr; 04 Earth</a>
+      <a href="mars.html">06 Mars &rarr;</a>
+    </nav>
+
+    <footer class="site-footer">
+      <span>Sakchhyam Kc &mdash; Web Dev, 2026</span>
+      <span>Images: NASA unless noted</span>
+      <span>HTML + CSS + JavaScript only</span>
+    </footer>
+  </div>
+
+  <script src="js/moon.js"></script>
+</body>
+</html>

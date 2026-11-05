@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Saturn &mdash; The Solar System</title>
+  <meta name="description" content="Facts about Saturn and its rings, plus a photo slideshow.">
+
+  <!-- Fonts: IBM Plex Mono for all text, DM Serif Display for the page title -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=DM+Serif+Display&display=swap">
+
+  <!-- Shared styles first, then this page's theme -->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/saturn.css">
+</head>
+<body class="saturn">
+  <div class="page">
+
+    <!-- ===== Header + navigation (the same on every page) ===== -->
+    <header class="site-header">
+      <div class="site-top">
+        <a href="index.html">The Solar System</a>
+        <span>Sakchhyam Kc</span>
+      </div>
+      <nav class="site-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html"><span>00</span>Home</a></li>
+          <li><a href="sun.html"><span>01</span>Sun</a></li>
+          <li><a href="mercury.html"><span>02</span>Mercury</a></li>
+          <li><a href="venus.html"><span>03</span>Venus</a></li>
+          <li><a href="earth.html"><span>04</span>Earth</a></li>
+          <li><a href="moon.html"><span>05</span>Moon</a></li>
+          <li><a href="mars.html"><span>06</span>Mars</a></li>
+          <li><a href="jupiter.html"><span>07</span>Jupiter</a></li>
+          <li><a href="saturn.html" class="active" aria-current="page"><span>08</span>Saturn</a></li>
+          <li><a href="uranus.html"><span>09</span>Uranus</a></li>
+          <li><a href="neptune.html"><span>10</span>Neptune</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <!-- ===== Title ===== -->
+      <section class="title-block">
+        <p class="index-no">08 / 10 &mdash; Planet 6</p>
+        <h1>Saturn</h1>
+        <p class="kicker">The one with the rings. Light enough to float, in theory.</p>
+      </section>
+
+      <!-- ===== Intro + facts (left) and images (right) ===== -->
+      <div class="grid">
+        <section class="col">
+          <h2 class="label">01 &mdash; Intro</h2>
+          <div class="intro">
+            <p>Saturn is the second-biggest planet and, like Jupiter, it's mostly hydrogen and helium. It's so light for its size that it would float in water, if you could somehow find a bathtub big enough.</p>
+            <p>The rings are what everyone knows it for. They're made of billions of chunks of ice and rock, some as small as dust and some as big as a house. They stretch out about 280,000 km from the planet but are usually only around 10 meters thick, which is kind of wild. Saturn also has the most known moons of any planet, including Titan, which is bigger than Mercury.</p>
+          </div>
+
+          <h2 class="label">02 &mdash; Quick facts</h2>
+          <table class="facts">
+            <tr><th scope="row">Distance from the Sun</th><td>About 1.4 billion km (9.5 AU)</td></tr>
+            <tr><th scope="row">Diameter</th><td>116,460 km (about 9&times; Earth)</td></tr>
+            <tr><th scope="row">Length of a day</th><td>About 10.7 hours</td></tr>
+            <tr><th scope="row">Length of a year</th><td>About 29 Earth years</td></tr>
+            <tr><th scope="row">Rings</th><td>Mostly ice, usually about 10 m thick</td></tr>
+            <tr><th scope="row">Density</th><td>Less than water</td></tr>
+            <tr><th scope="row">Moons</th><td>274 known, the most of any planet</td></tr>
+          </table>
+        </section>
+
+        <section class="col">
+          <h2 class="label">03 &mdash; Images</h2>
+          <figure tabindex="0">
+            <img src="images/saturn/cassini-saturn.jpg" alt="Saturn and its wide flat rings seen at an angle" width="1200" height="900">
+            <figcaption>Fig. 1 &mdash; Saturn from the Cassini spacecraft</figcaption>
+          </figure>
+          <figure tabindex="0">
+            <img src="images/saturn/rings-closeup.jpg" alt="Close-up of Saturn's rings showing many thin light and dark bands" width="1200" height="900">
+            <figcaption>Fig. 2 &mdash; Ring detail: thousands of ringlets</figcaption>
+          </figure>
+        </section>
+      </div>
+
+      <!-- ===== Interactive feature (code in js/saturn.js) ===== -->
+      <section class="feature">
+        <h2 class="label">04 &mdash; Slideshow</h2>
+        <p class="feature-note">More from Cassini, which orbited Saturn for 13 years. Use the buttons or your arrow keys.</p>
+
+        <div class="slideshow">
+          <!-- saturn.js shows one slide at a time -->
+          <figure class="slide" tabindex="0">
+            <img src="images/saturn/slide-backlit.jpg" alt="Saturn seen from behind, lit up by the Sun, with its rings glowing" width="1200" height="900">
+            <figcaption>Slide 1 &mdash; Saturn backlit by the Sun</figcaption>
+          </figure>
+          <figure class="slide" tabindex="0" hidden>
+            <img src="images/saturn/slide-titan.jpg" alt="Saturn's largest moon Titan, a hazy orange ball" width="1200" height="900">
+            <figcaption>Slide 2 &mdash; Titan, wrapped in orange haze</figcaption>
+          </figure>
+          <figure class="slide" tabindex="0" hidden>
+            <img src="images/saturn/slide-hexagon.jpg" alt="A six-sided storm pattern at Saturn's north pole" width="1200" height="900">
+            <figcaption>Slide 3 &mdash; The hexagon storm at the north pole</figcaption>
+          </figure>
+          <figure class="slide" tabindex="0" hidden>
+            <img src="images/saturn/slide-enceladus.jpg" alt="Saturn's small icy moon Enceladus, white with long cracks across its surface" width="1200" height="900">
+            <figcaption>Slide 4 &mdash; Enceladus, an icy moon with an ocean underneath</figcaption>
+          </figure>
+
+          <div class="controls">
+            <button class="btn" id="slide-prev" type="button">&larr; Previous</button>
+            <span class="slide-count" id="slide-count" aria-live="polite">01 / 04</span>
+            <button class="btn btn-accent" id="slide-next" type="button">Next &rarr;</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ===== Previous / next page ===== -->
+    <nav class="pager" aria-label="Previous and next page">
+      <a href="jupiter.html">&larr; 07 Jupiter</a>
+      <a href="uranus.html">09 Uranus &rarr;</a>
+    </nav>
+
+    <footer class="site-footer">
+      <span>Sakchhyam Kc &mdash; Web Dev, 2026</span>
+      <span>Images: NASA unless noted</span>
+      <span>HTML + CSS + JavaScript only</span>
+    </footer>
+  </div>
+
+  <script src="js/saturn.js"></script>
+</body>
+</html>

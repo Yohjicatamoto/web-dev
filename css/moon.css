@@ -1,0 +1,60 @@
+/* ============================================================
+   moon.css — Moon theme: silver gray, thin light title
+   ============================================================ */
+
+body.moon {
+  --accent: #a9a9a9;
+  --on-accent: #111111;
+  --heading-font: "Space Grotesk", Arial, sans-serif;
+}
+
+.moon h1 {
+  font-weight: 300;
+}
+
+/* ---------- Phase viewer ---------- */
+.phase-viewer {
+  display: grid;
+  gap: 24px;
+  align-items: center;
+  max-width: 760px;
+}
+
+@media (min-width: 640px) {
+  .phase-viewer {
+    grid-template-columns: 260px 1fr;
+  }
+}
+
+.phase-box {
+  background: #111111;
+  border: var(--rule);
+  padding: 20px;
+}
+
+.phase-box svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.moon-dark {
+  fill: #2b2b2b;
+}
+
+.moon-lit {
+  fill: #f2f0eb;
+}
+
+.phase-name {
+  font-family: var(--heading-font);
+  font-weight: 300;
+  font-size: 2.2rem;
+  line-height: 1.1;
+}
+
+.phase-day {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  margin: 6px 0 12px;
+}

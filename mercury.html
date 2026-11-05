@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mercury &mdash; The Solar System</title>
+  <meta name="description" content="Facts about Mercury, the smallest planet and the closest to the Sun.">
+
+  <!-- Fonts: IBM Plex Mono for all text, Major Mono Display for the page title -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Major+Mono+Display&display=swap">
+
+  <!-- Shared styles first, then this page's theme -->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/mercury.css">
+</head>
+<body class="mercury">
+  <div class="page">
+
+    <!-- ===== Header + navigation (the same on every page) ===== -->
+    <header class="site-header">
+      <div class="site-top">
+        <a href="index.html">The Solar System</a>
+        <span>Sakchhyam Kc</span>
+      </div>
+      <nav class="site-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html"><span>00</span>Home</a></li>
+          <li><a href="sun.html"><span>01</span>Sun</a></li>
+          <li><a href="mercury.html" class="active" aria-current="page"><span>02</span>Mercury</a></li>
+          <li><a href="venus.html"><span>03</span>Venus</a></li>
+          <li><a href="earth.html"><span>04</span>Earth</a></li>
+          <li><a href="moon.html"><span>05</span>Moon</a></li>
+          <li><a href="mars.html"><span>06</span>Mars</a></li>
+          <li><a href="jupiter.html"><span>07</span>Jupiter</a></li>
+          <li><a href="saturn.html"><span>08</span>Saturn</a></li>
+          <li><a href="uranus.html"><span>09</span>Uranus</a></li>
+          <li><a href="neptune.html"><span>10</span>Neptune</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <!-- ===== Title ===== -->
+      <section class="title-block">
+        <p class="index-no">02 / 10 &mdash; Planet 1</p>
+        <h1>Mercury</h1>
+        <p class="kicker">Smallest planet, closest to the Sun, wildest temperature swings.</p>
+      </section>
+
+      <!-- ===== Intro + facts (left) and images (right) ===== -->
+      <div class="grid">
+        <section class="col">
+          <h2 class="label">01 &mdash; Intro</h2>
+          <div class="intro">
+            <p>Mercury is the smallest planet, only a little bigger than our Moon, and it's the closest one to the Sun. It whips around the Sun in just 88 days, faster than any other planet.</p>
+            <p>You'd think that makes it the hottest planet, but it isn't (that's Venus). Mercury barely has an atmosphere to hold heat in, so the side facing the Sun bakes while the night side freezes. The surface is gray and covered in craters, kind of like the Moon.</p>
+          </div>
+
+          <h2 class="label">02 &mdash; Quick facts</h2>
+          <table class="facts">
+            <tr><th scope="row">Distance from the Sun</th><td>About 58 million km (0.4 AU)</td></tr>
+            <tr><th scope="row">Diameter</th><td>4,879 km</td></tr>
+            <tr><th scope="row">Length of a year</th><td>88 Earth days</td></tr>
+            <tr><th scope="row">Sunrise to sunrise</th><td>176 Earth days</td></tr>
+            <tr><th scope="row">Temperature</th><td>430 &deg;C day &middot; &minus;180 &deg;C night</td></tr>
+            <tr><th scope="row">Moons</th><td>0</td></tr>
+          </table>
+        </section>
+
+        <section class="col">
+          <h2 class="label">03 &mdash; Images</h2>
+          <figure tabindex="0">
+            <img src="images/mercury/messenger-globe.jpg" alt="Mercury's gray, cratered surface seen from space by the MESSENGER spacecraft" width="1200" height="900">
+            <figcaption>Fig. 1 &mdash; Mercury from MESSENGER</figcaption>
+          </figure>
+          <figure tabindex="0">
+            <img src="images/mercury/craters.jpg" alt="Close-up of overlapping impact craters on Mercury's surface" width="1200" height="900">
+            <figcaption>Fig. 2 &mdash; Craters on top of craters</figcaption>
+          </figure>
+        </section>
+      </div>
+
+      <!-- ===== Interactive feature (code in js/mercury.js) ===== -->
+      <section class="feature">
+        <h2 class="label">04 &mdash; Day side / night side</h2>
+        <p class="feature-note">Same planet, very different weather. Flip between the side facing the Sun and the side facing away.</p>
+        <button class="btn btn-accent" id="side-toggle" type="button" aria-pressed="false">Switch to night side</button>
+
+        <div class="readout temp-readout" aria-live="polite">
+          <p id="side-label">Sunlit side</p>
+          <strong id="side-temp">430 &deg;C</strong>
+          <p id="side-detail">806 &deg;F. Hot enough to melt lead.</p>
+        </div>
+      </section>
+    </main>
+
+    <!-- ===== Previous / next page ===== -->
+    <nav class="pager" aria-label="Previous and next page">
+      <a href="sun.html">&larr; 01 Sun</a>
+      <a href="venus.html">03 Venus &rarr;</a>
+    </nav>
+
+    <footer class="site-footer">
+      <span>Sakchhyam Kc &mdash; Web Dev, 2026</span>
+      <span>Images: NASA unless noted</span>
+      <span>HTML + CSS + JavaScript only</span>
+    </footer>
+  </div>
+
+  <script src="js/mercury.js"></script>
+</body>
+</html>

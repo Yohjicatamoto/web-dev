@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mars &mdash; The Solar System</title>
+  <meta name="description" content="Facts about Mars, the red planet, plus a Mars weight calculator.">
+
+  <!-- Fonts: IBM Plex Mono for all text, Anton for the page title -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Anton&display=swap">
+
+  <!-- Shared styles first, then this page's theme -->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/mars.css">
+</head>
+<body class="mars">
+  <div class="page">
+
+    <!-- ===== Header + navigation (the same on every page) ===== -->
+    <header class="site-header">
+      <div class="site-top">
+        <a href="index.html">The Solar System</a>
+        <span>Sakchhyam Kc</span>
+      </div>
+      <nav class="site-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html"><span>00</span>Home</a></li>
+          <li><a href="sun.html"><span>01</span>Sun</a></li>
+          <li><a href="mercury.html"><span>02</span>Mercury</a></li>
+          <li><a href="venus.html"><span>03</span>Venus</a></li>
+          <li><a href="earth.html"><span>04</span>Earth</a></li>
+          <li><a href="moon.html"><span>05</span>Moon</a></li>
+          <li><a href="mars.html" class="active" aria-current="page"><span>06</span>Mars</a></li>
+          <li><a href="jupiter.html"><span>07</span>Jupiter</a></li>
+          <li><a href="saturn.html"><span>08</span>Saturn</a></li>
+          <li><a href="uranus.html"><span>09</span>Uranus</a></li>
+          <li><a href="neptune.html"><span>10</span>Neptune</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <!-- ===== Title ===== -->
+      <section class="title-block">
+        <p class="index-no">06 / 10 &mdash; Planet 4</p>
+        <h1>Mars</h1>
+        <p class="kicker">Rusty, dusty, and the planet we've sent the most robots to.</p>
+      </section>
+
+      <!-- ===== Intro + facts (left) and images (right) ===== -->
+      <div class="grid">
+        <section class="col">
+          <h2 class="label">01 &mdash; Intro</h2>
+          <div class="intro">
+            <p>Mars is red because its dust is full of iron oxide, which is basically rust. It's about half the size of Earth and a lot colder, with a thin atmosphere that's mostly carbon dioxide.</p>
+            <p>It has some ridiculous landmarks. Olympus Mons is the tallest volcano in the solar system, and Valles Marineris is a canyon about as long as the United States is wide. There's also evidence that water used to flow there, which is a big reason rovers like Curiosity and Perseverance are driving around looking for signs of ancient life.</p>
+          </div>
+
+          <h2 class="label">02 &mdash; Quick facts</h2>
+          <table class="facts">
+            <tr><th scope="row">Distance from the Sun</th><td>About 228 million km (1.5 AU)</td></tr>
+            <tr><th scope="row">Diameter</th><td>6,779 km (about half of Earth)</td></tr>
+            <tr><th scope="row">Length of a day</th><td>24 h 37 min</td></tr>
+            <tr><th scope="row">Length of a year</th><td>687 Earth days</td></tr>
+            <tr><th scope="row">Gravity</th><td>38% of Earth's</td></tr>
+            <tr><th scope="row">Moons</th><td>2 (Phobos and Deimos)</td></tr>
+            <tr><th scope="row">Tallest volcano</th><td>Olympus Mons, about 22 km high</td></tr>
+          </table>
+        </section>
+
+        <section class="col">
+          <h2 class="label">03 &mdash; Images</h2>
+          <figure tabindex="0">
+            <img src="images/mars/mars-globe.jpg" alt="Mars from orbit, a reddish planet with dark patches and the long Valles Marineris canyon across the middle" width="1200" height="900">
+            <figcaption>Fig. 1 &mdash; Mars and Valles Marineris, Viking 1</figcaption>
+          </figure>
+          <figure tabindex="0">
+            <img src="images/mars/perseverance.jpg" alt="NASA's Perseverance rover sitting on the dusty red ground of Mars" width="1200" height="900">
+            <figcaption>Fig. 2 &mdash; Perseverance rover selfie, 2021</figcaption>
+          </figure>
+        </section>
+      </div>
+
+      <!-- ===== Interactive feature (code in js/mars.js) ===== -->
+      <section class="feature">
+        <h2 class="label">04 &mdash; Weight calculator</h2>
+        <p class="feature-note">What would you weigh on Mars? Type in your weight on Earth.</p>
+
+        <form class="calc" id="weight-form">
+          <div class="field">
+            <label for="earth-weight">Your weight on Earth</label>
+            <input type="number" id="earth-weight" min="1" max="2000" step="any" placeholder="120">
+            <select id="weight-unit" aria-label="Unit">
+              <option value="lb">lb</option>
+              <option value="kg">kg</option>
+            </select>
+            <button class="btn btn-accent" type="submit">Calculate</button>
+          </div>
+          <!-- mars.js writes the answer in here -->
+          <div class="readout" id="weight-result" aria-live="polite">
+            <p>Your Mars weight will show up here.</p>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <!-- ===== Previous / next page ===== -->
+    <nav class="pager" aria-label="Previous and next page">
+      <a href="moon.html">&larr; 05 Moon</a>
+      <a href="jupiter.html">07 Jupiter &rarr;</a>
+    </nav>
+
+    <footer class="site-footer">
+      <span>Sakchhyam Kc &mdash; Web Dev, 2026</span>
+      <span>Images: NASA unless noted</span>
+      <span>HTML + CSS + JavaScript only</span>
+    </footer>
+  </div>
+
+  <script src="js/mars.js"></script>
+</body>
+</html>

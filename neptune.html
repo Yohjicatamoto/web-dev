@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Neptune &mdash; The Solar System</title>
+  <meta name="description" content="Bonus page: facts about Neptune, the windiest and farthest planet.">
+
+  <!-- Fonts: IBM Plex Mono for all text, Syne for the page title -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Syne:wght@800&display=swap">
+
+  <!-- Shared styles first, then this page's theme -->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/neptune.css">
+</head>
+<body class="neptune">
+  <div class="page">
+
+    <!-- ===== Header + navigation (the same on every page) ===== -->
+    <header class="site-header">
+      <div class="site-top">
+        <a href="index.html">The Solar System</a>
+        <span>Sakchhyam Kc</span>
+      </div>
+      <nav class="site-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html"><span>00</span>Home</a></li>
+          <li><a href="sun.html"><span>01</span>Sun</a></li>
+          <li><a href="mercury.html"><span>02</span>Mercury</a></li>
+          <li><a href="venus.html"><span>03</span>Venus</a></li>
+          <li><a href="earth.html"><span>04</span>Earth</a></li>
+          <li><a href="moon.html"><span>05</span>Moon</a></li>
+          <li><a href="mars.html"><span>06</span>Mars</a></li>
+          <li><a href="jupiter.html"><span>07</span>Jupiter</a></li>
+          <li><a href="saturn.html"><span>08</span>Saturn</a></li>
+          <li><a href="uranus.html"><span>09</span>Uranus</a></li>
+          <li><a href="neptune.html" class="active" aria-current="page"><span>10</span>Neptune</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <!-- ===== Title ===== -->
+      <section class="title-block">
+        <p class="index-no">10 / 10 &mdash; Planet 8 &middot; Bonus</p>
+        <h1>Neptune</h1>
+        <p class="kicker">Bonus page. The farthest planet, and the windiest.</p>
+      </section>
+
+      <!-- ===== Intro + facts (left) and images (right) ===== -->
+      <div class="grid">
+        <section class="col">
+          <h2 class="label">01 &mdash; Intro</h2>
+          <div class="intro">
+            <p>Neptune is the farthest planet from the Sun, about 30 times farther out than Earth. It's an ice giant like Uranus, but a deeper blue and way more active. It has the fastest winds in the solar system, even though it barely gets any sunlight.</p>
+            <p>It's also the only planet that was found with math before anyone actually saw it. Astronomers noticed Uranus wasn't moving quite how it should, figured something big must be pulling on it, and in 1846 they pointed a telescope where the math said to look. There it was.</p>
+          </div>
+
+          <h2 class="label">02 &mdash; Quick facts</h2>
+          <table class="facts">
+            <tr><th scope="row">Distance from the Sun</th><td>About 4.5 billion km (30 AU)</td></tr>
+            <tr><th scope="row">Diameter</th><td>49,244 km (about 4&times; Earth)</td></tr>
+            <tr><th scope="row">Length of a day</th><td>About 16 hours</td></tr>
+            <tr><th scope="row">Length of a year</th><td>About 165 Earth years</td></tr>
+            <tr><th scope="row">Top wind speed</th><td>About 2,000 km/h</td></tr>
+            <tr><th scope="row">Moons</th><td>16 known (the biggest is Triton)</td></tr>
+            <tr><th scope="row">Discovered</th><td>1846</td></tr>
+          </table>
+        </section>
+
+        <section class="col">
+          <h2 class="label">03 &mdash; Images</h2>
+          <figure tabindex="0">
+            <img src="images/neptune/voyager-neptune.jpg" alt="Neptune as a deep blue planet with white streaks of cloud and a dark storm spot" width="1200" height="900">
+            <figcaption>Fig. 1 &mdash; Neptune from Voyager 2, 1989</figcaption>
+          </figure>
+          <figure tabindex="0">
+            <img src="images/neptune/triton.jpg" alt="Neptune's moon Triton, with a pinkish, icy, bumpy surface" width="1200" height="900">
+            <figcaption>Fig. 2 &mdash; Triton, Neptune's biggest moon</figcaption>
+          </figure>
+        </section>
+      </div>
+
+      <!-- ===== Interactive feature (code in js/neptune.js) ===== -->
+      <section class="feature">
+        <h2 class="label">04 &mdash; Wind speed</h2>
+        <p class="feature-note">Neptune's winds hit about 2,000 km/h. Pick something to compare them to.</p>
+
+        <div class="field">
+          <label for="wind-compare">Compare with</label>
+          <select id="wind-compare">
+            <option value="hurricane">A Category 5 hurricane</option>
+            <option value="car">A car on the highway</option>
+            <option value="sprinter">Usain Bolt at top speed</option>
+            <option value="jet">A passenger jet</option>
+            <option value="sound">The speed of sound</option>
+          </select>
+        </div>
+
+        <div class="bars">
+          <div class="bar-row">
+            <p class="bar-label">Neptune's winds: 2,000 km/h</p>
+            <div class="bar-track"><div class="bar neptune-bar"></div></div>
+          </div>
+          <div class="bar-row">
+            <!-- neptune.js sets this label and the bar width -->
+            <p class="bar-label" id="compare-label"></p>
+            <div class="bar-track"><div class="bar" id="compare-bar"></div></div>
+          </div>
+        </div>
+
+        <p class="wind-summary" id="wind-summary" aria-live="polite"></p>
+      </section>
+    </main>
+
+    <!-- ===== Previous / next page ===== -->
+    <nav class="pager" aria-label="Previous and next page">
+      <a href="uranus.html">&larr; 09 Uranus</a>
+      <a href="index.html">00 Home &rarr;</a>
+    </nav>
+
+    <footer class="site-footer">
+      <span>Sakchhyam Kc &mdash; Web Dev, 2026</span>
+      <span>Images: NASA unless noted</span>
+      <span>HTML + CSS + JavaScript only</span>
+    </footer>
+  </div>
+
+  <script src="js/neptune.js"></script>
+</body>
+</html>

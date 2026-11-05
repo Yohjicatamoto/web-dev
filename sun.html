@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Sun &mdash; The Solar System</title>
+  <meta name="description" content="Facts about the Sun, the star at the center of the solar system.">
+
+  <!-- Fonts: IBM Plex Mono for all text, Archivo Black for the page title -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Archivo+Black&display=swap">
+
+  <!-- Shared styles first, then this page's theme -->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/sun.css">
+</head>
+<body class="sun">
+  <div class="page">
+
+    <!-- ===== Header + navigation (the same on every page) ===== -->
+    <header class="site-header">
+      <div class="site-top">
+        <a href="index.html">The Solar System</a>
+        <span>Sakchhyam Kc</span>
+      </div>
+      <nav class="site-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html"><span>00</span>Home</a></li>
+          <li><a href="sun.html" class="active" aria-current="page"><span>01</span>Sun</a></li>
+          <li><a href="mercury.html"><span>02</span>Mercury</a></li>
+          <li><a href="venus.html"><span>03</span>Venus</a></li>
+          <li><a href="earth.html"><span>04</span>Earth</a></li>
+          <li><a href="moon.html"><span>05</span>Moon</a></li>
+          <li><a href="mars.html"><span>06</span>Mars</a></li>
+          <li><a href="jupiter.html"><span>07</span>Jupiter</a></li>
+          <li><a href="saturn.html"><span>08</span>Saturn</a></li>
+          <li><a href="uranus.html"><span>09</span>Uranus</a></li>
+          <li><a href="neptune.html"><span>10</span>Neptune</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <!-- ===== Title ===== -->
+      <section class="title-block">
+        <p class="index-no">01 / 10 &mdash; Star</p>
+        <h1>The Sun</h1>
+        <p class="kicker">A pretty average star. Still holds the whole system together.</p>
+      </section>
+
+      <!-- ===== Intro + facts (left) and images (right) ===== -->
+      <div class="grid">
+        <section class="col">
+          <h2 class="label">01 &mdash; Intro</h2>
+          <div class="intro">
+            <p>The Sun is a star: a giant ball of super hot gas, mostly hydrogen and helium. Deep in the core, hydrogen gets crushed together into helium, and that releases the energy that ends up as sunlight.</p>
+            <p>It's 109 times wider than Earth and holds about 99.8% of all the mass in the solar system, which is why everything orbits it. Compared to other stars though, it's honestly just medium-sized. The light hitting you right now left the Sun about 8 minutes ago.</p>
+          </div>
+
+          <h2 class="label">02 &mdash; Quick facts</h2>
+          <table class="facts">
+            <tr><th scope="row">Type</th><td>Yellow dwarf star (G-type)</td></tr>
+            <tr><th scope="row">Diameter</th><td>About 1.39 million km (109&times; Earth)</td></tr>
+            <tr><th scope="row">Distance from Earth</th><td>About 150 million km (1 AU)</td></tr>
+            <tr><th scope="row">Surface temperature</th><td>About 5,500 &deg;C</td></tr>
+            <tr><th scope="row">Core temperature</th><td>About 15 million &deg;C</td></tr>
+            <tr><th scope="row">Age</th><td>About 4.6 billion years</td></tr>
+            <tr><th scope="row">Light's trip to Earth</th><td>About 8 min 20 s</td></tr>
+          </table>
+        </section>
+
+        <section class="col">
+          <h2 class="label">03 &mdash; Images</h2>
+          <figure tabindex="0">
+            <img src="images/sun/sun-ultraviolet.jpg" alt="The Sun photographed in ultraviolet light, with bright glowing patches of activity across its surface" width="1200" height="900">
+            <figcaption>Fig. 1 &mdash; The Sun in ultraviolet, Solar Dynamics Observatory</figcaption>
+          </figure>
+          <figure tabindex="0">
+            <img src="images/sun/solar-flare.jpg" alt="A huge loop of glowing gas erupting from the edge of the Sun" width="1200" height="900">
+            <figcaption>Fig. 2 &mdash; A solar eruption at the Sun's edge</figcaption>
+          </figure>
+        </section>
+      </div>
+
+      <!-- ===== Interactive feature (code in js/sun.js) ===== -->
+      <section class="feature">
+        <h2 class="label">04 &mdash; Fun facts</h2>
+        <p class="feature-note">Six extra facts that didn't fit in the table.</p>
+        <button class="btn btn-accent" id="open-fact" type="button">Open a fun fact</button>
+
+        <!-- The pop-up. It stays hidden until sun.js shows it. -->
+        <div class="modal-backdrop" id="fact-modal" hidden>
+          <div class="modal" role="dialog" aria-modal="true" aria-labelledby="fact-title">
+            <div class="modal-head">
+              <span id="fact-title">Sun fact <span id="fact-count">01 / 06</span></span>
+              <button class="btn" id="close-fact" type="button" aria-label="Close">X</button>
+            </div>
+            <p class="modal-body" id="fact-text"></p>
+            <div class="controls">
+              <button class="btn btn-accent" id="next-fact" type="button">Next fact</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ===== Previous / next page ===== -->
+    <nav class="pager" aria-label="Previous and next page">
+      <a href="index.html">&larr; 00 Home</a>
+      <a href="mercury.html">02 Mercury &rarr;</a>
+    </nav>
+
+    <footer class="site-footer">
+      <span>Sakchhyam Kc &mdash; Web Dev, 2026</span>
+      <span>Images: NASA unless noted</span>
+      <span>HTML + CSS + JavaScript only</span>
+    </footer>
+  </div>
+
+  <script src="js/sun.js"></script>
+</body>
+</html>

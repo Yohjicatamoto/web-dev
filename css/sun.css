@@ -1,0 +1,56 @@
+/* ============================================================
+   sun.css — Sun theme: hot orange, heavy black title font
+   ============================================================ */
+
+body.sun {
+  --accent: #ff5a00;
+  --on-accent: #111111;
+  --heading-font: "Archivo Black", "Arial Black", sans-serif;
+}
+
+/* ---------- Fun fact pop-up ---------- */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(17, 17, 17, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  z-index: 10;
+}
+
+/* The hidden attribute must win over display: flex */
+.modal-backdrop[hidden] {
+  display: none;
+}
+
+.modal {
+  background: var(--paper);
+  border: var(--rule);
+  width: 100%;
+  max-width: 520px;
+}
+
+.modal-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--accent);
+  border-bottom: var(--rule);
+  padding: 8px 8px 8px 16px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.modal-body {
+  padding: 24px 16px;
+  font-size: 1.15rem;
+  min-height: 8em;
+}
+
+.modal .controls {
+  padding: 0 16px 16px;
+  margin: 0;
+}

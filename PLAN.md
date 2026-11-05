@@ -218,6 +218,6 @@ Use a screen recorder with a mic (OBS, Loom, or the built-in recorders in Window
 
 ## 11. Open questions
 
-- **Neptune** isn't on the required list. Leave it out, or add it as a bonus page?
+- ~~Neptune~~ → **Added as a bonus page** (`neptune.html`, 10 in the nav) with a wind speed comparison as its JS feature.
 - ~~GitHub Pages~~ → **Yes: submit both the live link and the repo link.** In the repo, go to Settings → Pages → Deploy from a branch → `main` / `(root)`. The live site will be at `https://yohjicatamoto.github.io/web-dev/`. Because all paths are relative and lowercase, they work on Pages; file names are case-sensitive there.
 - ~~Google Fonts~~ → **Yes, using Google Fonts.** Mention in the video that they are fonts, not a framework or library.

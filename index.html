@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Solar System</title>
+  <meta name="description" content="A ten-page field guide to the Sun, the Moon and the planets, by Sakchhyam Kc.">
+
+  <!-- Fonts: IBM Plex Mono for all text, Space Mono for the page title -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Space+Mono:wght@700&display=swap">
+
+  <!-- Shared styles first, then this page's theme -->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/home.css">
+</head>
+<body class="home">
+  <div class="page">
+
+    <!-- ===== Header + navigation (the same on every page) ===== -->
+    <header class="site-header">
+      <div class="site-top">
+        <a href="index.html">The Solar System</a>
+        <span>Sakchhyam Kc</span>
+      </div>
+      <nav class="site-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html" class="active" aria-current="page"><span>00</span>Home</a></li>
+          <li><a href="sun.html"><span>01</span>Sun</a></li>
+          <li><a href="mercury.html"><span>02</span>Mercury</a></li>
+          <li><a href="venus.html"><span>03</span>Venus</a></li>
+          <li><a href="earth.html"><span>04</span>Earth</a></li>
+          <li><a href="moon.html"><span>05</span>Moon</a></li>
+          <li><a href="mars.html"><span>06</span>Mars</a></li>
+          <li><a href="jupiter.html"><span>07</span>Jupiter</a></li>
+          <li><a href="saturn.html"><span>08</span>Saturn</a></li>
+          <li><a href="uranus.html"><span>09</span>Uranus</a></li>
+          <li><a href="neptune.html"><span>10</span>Neptune</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <!-- ===== Title ===== -->
+      <section class="title-block">
+        <p class="index-no">00 / 10 &mdash; Index</p>
+        <h1>The Solar<br>System</h1>
+        <p class="kicker">One star, eight planets, a lot of empty space. A small field guide by Sakchhyam Kc.</p>
+      </section>
+
+      <!-- ===== Intro + facts (left) and images (right) ===== -->
+      <div class="grid">
+        <section class="col">
+          <h2 class="label">01 &mdash; Intro</h2>
+          <div class="intro">
+            <p>The solar system is the Sun plus everything stuck orbiting it: eight planets, their moons, a belt of asteroids, comets, and a whole lot of dust. It all formed around 4.6 billion years ago out of a giant spinning cloud of gas.</p>
+            <p>The first four planets are small and rocky. Past the asteroid belt you get the giants: two made mostly of gas, and two made mostly of ice. This site has a page for the Sun, our Moon, and every planet out to Neptune. Use the menu up top, click a dot in the orbit model, or pick from the index at the bottom.</p>
+          </div>
+
+          <h2 class="label">02 &mdash; The system in numbers</h2>
+          <table class="facts">
+            <tr><th scope="row">Age</th><td>About 4.6 billion years</td></tr>
+            <tr><th scope="row">Planets</th><td>8</td></tr>
+            <tr><th scope="row">Sun's share of all the mass</th><td>About 99.8%</td></tr>
+            <tr><th scope="row">Rocky planets</th><td>Mercury, Venus, Earth, Mars</td></tr>
+            <tr><th scope="row">Giant planets</th><td>Jupiter, Saturn (gas) &middot; Uranus, Neptune (ice)</td></tr>
+            <tr><th scope="row">Sunlight's trip to Neptune</th><td>About 4 hours</td></tr>
+          </table>
+        </section>
+
+        <section class="col">
+          <h2 class="label">03 &mdash; Images</h2>
+          <figure tabindex="0">
+            <img src="images/home/solar-system.jpg" alt="Illustration of the Sun and the eight planets lined up in order" width="1200" height="900">
+            <figcaption>Fig. 1 &mdash; The Sun and the eight planets (not to scale)</figcaption>
+          </figure>
+          <figure tabindex="0">
+            <img src="images/home/pale-blue-dot.jpg" alt="Earth as a tiny bright dot in a band of light, photographed by Voyager 1 from about 6 billion kilometers away" width="1200" height="900">
+            <figcaption>Fig. 2 &mdash; Pale Blue Dot, Voyager 1, 1990</figcaption>
+          </figure>
+        </section>
+      </div>
+
+      <!-- ===== Interactive feature (code in js/home.js) ===== -->
+      <section class="feature">
+        <h2 class="label">04 &mdash; Orbit model</h2>
+        <p class="feature-note">Not to scale: the distances are squashed so everything fits in the box. The order of the speeds is real (inner planets are faster), the exact speeds aren't. Click a dot to go to that planet.</p>
+
+        <div class="controls">
+          <button class="btn" id="orbit-start" type="button">Start</button>
+          <button class="btn" id="orbit-stop" type="button" disabled>Stop</button>
+          <span id="orbit-status">Status: stopped</span>
+        </div>
+
+        <div class="orbit-layout">
+          <!-- Rings and planet dots get added here by home.js -->
+          <div class="orbit" id="orbit">
+            <div class="sun-dot" title="Sun"></div>
+          </div>
+
+          <ul class="key" aria-label="Color key">
+            <li><a href="sun.html"><span class="swatch" style="background:#ff5a00"></span>Sun</a></li>
+            <li><a href="mercury.html"><span class="swatch" style="background:#8a8a8a"></span>Mercury</a></li>
+            <li><a href="venus.html"><span class="swatch" style="background:#e3b94f"></span>Venus</a></li>
+            <li><a href="earth.html"><span class="swatch" style="background:#1f5fbf"></span>Earth</a></li>
+            <li><a href="mars.html"><span class="swatch" style="background:#b3401e"></span>Mars</a></li>
+            <li><a href="jupiter.html"><span class="swatch" style="background:#c97b3d"></span>Jupiter</a></li>
+            <li><a href="saturn.html"><span class="swatch" style="background:#c9a227"></span>Saturn</a></li>
+            <li><a href="uranus.html"><span class="swatch" style="background:#3fb8c4"></span>Uranus</a></li>
+            <li><a href="neptune.html"><span class="swatch" style="background:#2b4bc9"></span>Neptune</a></li>
+          </ul>
+        </div>
+      </section>
+      <!-- ===== Index of every page ===== -->
+      <section class="directory">
+        <h2 class="label">05 &mdash; Index</h2>
+        <table>
+          <tr><th scope="col">No.</th><th scope="col">Page</th><th scope="col" class="type">Type</th><th scope="col">From the Sun</th></tr>
+          <tr><td>01</td><td><a href="sun.html">Sun</a></td><td class="type">Star</td><td>&mdash;</td></tr>
+          <tr><td>02</td><td><a href="mercury.html">Mercury</a></td><td class="type">Rocky</td><td>58M km</td></tr>
+          <tr><td>03</td><td><a href="venus.html">Venus</a></td><td class="type">Rocky</td><td>108M km</td></tr>
+          <tr><td>04</td><td><a href="earth.html">Earth</a></td><td class="type">Rocky</td><td>150M km</td></tr>
+          <tr><td>05</td><td><a href="moon.html">Moon</a></td><td class="type">Moon</td><td>(orbits Earth)</td></tr>
+          <tr><td>06</td><td><a href="mars.html">Mars</a></td><td class="type">Rocky</td><td>228M km</td></tr>
+          <tr><td>07</td><td><a href="jupiter.html">Jupiter</a></td><td class="type">Gas giant</td><td>778M km</td></tr>
+          <tr><td>08</td><td><a href="saturn.html">Saturn</a></td><td class="type">Gas giant</td><td>1.4B km</td></tr>
+          <tr><td>09</td><td><a href="uranus.html">Uranus</a></td><td class="type">Ice giant</td><td>2.9B km</td></tr>
+          <tr><td>10</td><td><a href="neptune.html">Neptune</a></td><td class="type">Ice giant</td><td>4.5B km</td></tr>
+        </table>
+      </section>
+    </main>
+
+    <!-- ===== Previous / next page ===== -->
+    <nav class="pager" aria-label="Previous and next page">
+      <a href="neptune.html">&larr; 10 Neptune</a>
+      <a href="sun.html">01 Sun &rarr;</a>
+    </nav>
+
+    <footer class="site-footer">
+      <span>Sakchhyam Kc &mdash; Web Dev, 2026</span>
+      <span>Images: NASA unless noted</span>
+      <span>HTML + CSS + JavaScript only</span>
+    </footer>
+  </div>
+
+  <script src="js/home.js"></script>
+</body>
+</html>

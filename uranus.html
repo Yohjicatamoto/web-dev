@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Uranus &mdash; The Solar System</title>
+  <meta name="description" content="Facts about Uranus, the planet that spins on its side.">
+
+  <!-- Fonts: IBM Plex Mono for all text, Unbounded for the page title -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Unbounded:wght@700&display=swap">
+
+  <!-- Shared styles first, then this page's theme -->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/uranus.css">
+</head>
+<body class="uranus">
+  <div class="page">
+
+    <!-- ===== Header + navigation (the same on every page) ===== -->
+    <header class="site-header">
+      <div class="site-top">
+        <a href="index.html">The Solar System</a>
+        <span>Sakchhyam Kc</span>
+      </div>
+      <nav class="site-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html"><span>00</span>Home</a></li>
+          <li><a href="sun.html"><span>01</span>Sun</a></li>
+          <li><a href="mercury.html"><span>02</span>Mercury</a></li>
+          <li><a href="venus.html"><span>03</span>Venus</a></li>
+          <li><a href="earth.html"><span>04</span>Earth</a></li>
+          <li><a href="moon.html"><span>05</span>Moon</a></li>
+          <li><a href="mars.html"><span>06</span>Mars</a></li>
+          <li><a href="jupiter.html"><span>07</span>Jupiter</a></li>
+          <li><a href="saturn.html"><span>08</span>Saturn</a></li>
+          <li><a href="uranus.html" class="active" aria-current="page"><span>09</span>Uranus</a></li>
+          <li><a href="neptune.html"><span>10</span>Neptune</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <!-- ===== Title ===== -->
+      <section class="title-block">
+        <p class="index-no">09 / 10 &mdash; Planet 7</p>
+        <h1>Uranus</h1>
+        <p class="kicker">The sideways planet.</p>
+        <span class="axis" aria-hidden="true"></span>
+        <span class="axis-label" aria-hidden="true">Axis tilt 98&deg;</span>
+      </section>
+
+      <!-- ===== Intro + facts (left) and images (right) ===== -->
+      <div class="grid">
+        <section class="col">
+          <h2 class="label">01 &mdash; Intro</h2>
+          <div class="intro">
+            <p>Uranus is an ice giant. Under the blue-green clouds it's mostly water, methane and ammonia, all squashed together. The methane in the air soaks up red light, which is why it looks that pale cyan color.</p>
+            <p>The weirdest thing about it is that it's tipped over on its side, tilted about 98 degrees. Most likely something huge crashed into it a long time ago. Because of that, each pole gets about 42 years of nonstop sunlight followed by 42 years of darkness.</p>
+          </div>
+
+          <h2 class="label">02 &mdash; Quick facts</h2>
+          <table class="facts">
+            <tr><th scope="row">Distance from the Sun</th><td>About 2.9 billion km (19.2 AU)</td></tr>
+            <tr><th scope="row">Diameter</th><td>50,724 km (about 4&times; Earth)</td></tr>
+            <tr><th scope="row">Length of a day</th><td>About 17 hours</td></tr>
+            <tr><th scope="row">Length of a year</th><td>84 Earth years</td></tr>
+            <tr><th scope="row">Axis tilt</th><td>About 98&deg;</td></tr>
+            <tr><th scope="row">Coldest temperature</th><td>&minus;224 &deg;C</td></tr>
+            <tr><th scope="row">Moons</th><td>29 known</td></tr>
+          </table>
+        </section>
+
+        <section class="col">
+          <h2 class="label">03 &mdash; Images</h2>
+          <figure tabindex="0">
+            <img src="images/uranus/voyager-uranus.jpg" alt="Uranus as a smooth, featureless pale blue-green ball" width="1200" height="900">
+            <figcaption>Fig. 1 &mdash; Uranus from Voyager 2, 1986</figcaption>
+          </figure>
+          <figure tabindex="0">
+            <img src="images/uranus/webb-rings.jpg" alt="Infrared image of Uranus with thin rings circling it and a bright polar cap" width="1200" height="900">
+            <figcaption>Fig. 2 &mdash; Uranus and its rings, James Webb Space Telescope</figcaption>
+          </figure>
+        </section>
+      </div>
+
+      <!-- ===== Interactive feature (code in js/uranus.js) ===== -->
+      <section class="feature">
+        <h2 class="label">04 &mdash; Age calculator</h2>
+        <p class="feature-note">One year on Uranus takes 84 Earth years. How old would you be there?</p>
+
+        <form class="calc" id="age-form">
+          <div class="field">
+            <label for="earth-age">Your age in Earth years</label>
+            <input type="number" id="earth-age" min="0" max="130" step="any" placeholder="16">
+            <button class="btn btn-accent" type="submit">Calculate</button>
+          </div>
+          <!-- uranus.js writes the answer in here -->
+          <div class="readout" id="age-result" aria-live="polite">
+            <p>Your Uranus age will show up here.</p>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <!-- ===== Previous / next page ===== -->
+    <nav class="pager" aria-label="Previous and next page">
+      <a href="saturn.html">&larr; 08 Saturn</a>
+      <a href="neptune.html">10 Neptune &rarr;</a>
+    </nav>
+
+    <footer class="site-footer">
+      <span>Sakchhyam Kc &mdash; Web Dev, 2026</span>
+      <span>Images: NASA unless noted</span>
+      <span>HTML + CSS + JavaScript only</span>
+    </footer>
+  </div>
+
+  <script src="js/uranus.js"></script>
+</body>
+</html>

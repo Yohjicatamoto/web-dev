@@ -1,0 +1,145 @@
+/* ============================================================
+   home.css — Homepage theme
+   Same layout as every other page, but inverted: black
+   background, light text. This is the "space" version.
+   ============================================================ */
+
+body.home {
+  --paper: #0b0b0b;
+  --ink: #f2f0eb;
+  --accent: #0b0b0b;
+  --on-accent: #f2f0eb;
+  --heading-font: "Space Mono", "Courier New", monospace;
+}
+
+/* Scattered stars: three layers of tiny dots at different spacings */
+.home .title-block {
+  background-image:
+    radial-gradient(circle, #f2f0eb 1.2px, transparent 1.7px),
+    radial-gradient(circle, rgba(242, 240, 235, 0.6) 1px, transparent 1.5px),
+    radial-gradient(circle, rgba(242, 240, 235, 0.35) 1px, transparent 1.5px);
+  background-size: 211px 173px, 127px 149px, 67px 89px;
+  background-position: 41px 23px, 89px 61px, 17px 37px;
+}
+
+.home h1 {
+  font-size: clamp(2.8rem, 11vw, 7.5rem);
+}
+
+/* ---------- Orbit model ---------- */
+.orbit {
+  position: relative;
+  width: 100%;
+  max-width: 560px;
+  aspect-ratio: 1 / 1;
+  border: var(--rule);
+  overflow: hidden;
+}
+
+/* Orbit lines (created in home.js) */
+.ring {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid rgba(242, 240, 235, 0.35);
+  border-radius: 50%;
+}
+
+.sun-dot {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 26px;
+  height: 26px;
+  transform: translate(-50%, -50%);
+  background: #ff5a00;
+  border-radius: 50%;
+}
+
+/* Planet dots (created in home.js) */
+.dot {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
+
+.orbit-layout {
+  display: grid;
+  gap: 24px;
+}
+
+@media (min-width: 800px) {
+  .orbit-layout {
+    grid-template-columns: 1.4fr 1fr;
+  }
+}
+
+/* Color key next to the model */
+.key {
+  list-style: none;
+  border-top: var(--rule);
+}
+
+.key li {
+  border-bottom: var(--thin);
+}
+
+.key a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 0;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+}
+
+.key a:hover {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.swatch {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+/* ---------- Index table of every page ---------- */
+.directory {
+  padding: 24px 16px 32px;
+  border-bottom: var(--rule);
+}
+
+.directory table {
+  width: 100%;
+  border-collapse: collapse;
+  border-top: var(--rule);
+}
+
+.directory th,
+.directory td {
+  text-align: left;
+  padding: 10px 8px 10px 0;
+  border-bottom: var(--thin);
+  font-size: 0.85rem;
+}
+
+.directory th {
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+}
+
+.directory td a {
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+/* Hide the "type" column on small phones so the table fits */
+@media (max-width: 480px) {
+  .directory .type {
+    display: none;
+  }
+}
